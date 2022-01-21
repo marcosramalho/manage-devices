@@ -1,0 +1,35 @@
+<section class="wrapper">
+  <div class="body-overlay" [ngClass]="{'show-nav': menuService.hideSideNav}" (click)="menuService.toggleSideNav()">
+  </div>
+
+  <!------------  SIDEBAR   --------------->
+  <app-admin-side-nav></app-admin-side-nav>
+
+  <!------------  PAGE CONTENT   --------------->
+  <div id="content" [ngClass]="{'active': menuService.expandedSideNav}">
+    <!------------  TOP NAVBAR  --------------->
+    <div class="top-navbar">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button type="button" id="sidebarCollapse" class="d-xl-block d-lg-block d-md-mone d-none"
+            (click)="menuService.toggleExpandedSideNav()">
+            <span class="material-icons">arrow_back_ios</span>
+          </button>
+
+          <button class="d-inline-block d-lg-none ml-auto more-button" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation" (click)="menuService.toggleSideNav()">
+            <span class="material-icons">more_vert</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container my-4 h-100 h-min-500">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+
+</section>

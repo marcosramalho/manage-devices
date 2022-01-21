@@ -1,0 +1,20 @@
+<nav id="sidebar" [ngClass]="{'active': menuService.expandedSideNav, 'show-nav': menuService.hideSideNav}">
+  <div class="sidebar-header">
+    <h3><img src="../../assets/img/planning.png" class="img-fluid" /><span>Manager Devices</span></h3>
+  </div>
+  <ul class="list-unstyled component">
+    <li *ngFor="let item of menuService.menuItem; let i=index" [class.active]="item.route === activeRoute">
+      <a class="cursor-pointer" [ngClass]="{'dropdown-toggle collapsed': item.children}"
+        (click)="menuService.subMenuOpen=menuService.subMenuOpen==i?-1:i; onItemSelected(item)"><i
+          class="material-icons">{{
+          item.iconName}}</i><span>{{item.displayName}}</span></a>
+
+      <ul class="list-unstyled menu collapse" role="menu" [class.show]="menuService.subMenuOpen==i">
+        <li role="menuitem" *ngFor="let subMenu of item.children" [class.active]="subMenu.route === activeRoute"><a
+            class="dropdown-item cursor-pointer" (click)="onItemSelected(subMenu)">{{
+            subMenu.displayName}}</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</nav>
