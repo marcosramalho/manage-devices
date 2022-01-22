@@ -1,9 +1,13 @@
 import { CreateCategoryController } from './createCategory.controller'
 import { MissingParamError } from '../errors/missing-param-error'
 
+const makeSut = (): CreateCategoryController => {
+  return new CreateCategoryController()
+}
+
 describe('CreateCategory Controller', () => {
-  it('Should return 400 if no name is provided', () => {
-    const sut = new CreateCategoryController()
+  test('Should return 400 if no name is provided', () => {
+    const sut = makeSut()
     const httpRequest = {
       body: {},
     }
