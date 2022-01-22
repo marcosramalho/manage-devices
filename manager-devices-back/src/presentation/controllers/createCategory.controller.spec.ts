@@ -9,5 +9,6 @@ describe('CreateCategory Controller', () => {
 
     const httpResponse = sut.execute(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
+    expect(httpResponse.body).toEqual(new Error('Missing param: name'))
   })
 })
