@@ -4,6 +4,14 @@ import { badRequest } from '../helpers/http'
 
 export class CreateCategoryController {
   execute(httpRequest: HttpRequest): HttpResponse {
-    return badRequest(new MissingParamError('name'))
+    const requiredFields = ['name']
+
+    for (const field of requiredFields) {
+      if (!httpRequest.body[field]) {
+        return badRequest(new MissingParamError(field))
+      }
+    }
+
+    return { statusCode: 200, body: null }
   }
 }

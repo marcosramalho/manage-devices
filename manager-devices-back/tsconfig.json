@@ -8,6 +8,7 @@
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noImplicitAny": false
   }
 }
