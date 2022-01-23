@@ -28,7 +28,8 @@
       "class-methods-use-this": "off",
       "import/no-unresolved": "off",
       "import/extensions": "off",
-      "no-restricted-syntax": "off"     
-
+      "no-restricted-syntax": "off",
+      "import/no-import-module-exports": "off",
+      "import/no-extraneous-dependencies": "off"
     }
 }
