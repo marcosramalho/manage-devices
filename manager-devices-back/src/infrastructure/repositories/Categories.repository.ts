@@ -1,6 +1,7 @@
 import { getRepository, Repository } from 'typeorm'
 import { Category } from '../../domain/entities/category.entity'
 import ICreateCategoryDTO from '../../domain/dtos/categories/ICreateCategory.dto'
+import IUpdateCategoryDto from '../../domain/dtos/categories/IUpdateCategory.dto'
 
 class CategoriesRepository {
   private ormRepository: Repository<Category>
@@ -9,8 +10,8 @@ class CategoriesRepository {
     this.ormRepository = getRepository(Category)
   }
 
-  public async create(userData: ICreateCategoryDTO): Promise<Category> {
-    const user = this.ormRepository.create(userData)
+  public async create(categoryData: ICreateCategoryDTO): Promise<Category> {
+    const user = this.ormRepository.create(categoryData)
 
     await this.ormRepository.save(user)
 
@@ -23,6 +24,10 @@ class CategoriesRepository {
 
   public async findById(id: number): Promise<Category | undefined> {
     return this.ormRepository.findOne(id)
+  }
+
+  public async update(id: number, categoryData: IUpdateCategoryDto) {
+    return this.ormRepository.update(id, categoryData)
   }
 }
 
