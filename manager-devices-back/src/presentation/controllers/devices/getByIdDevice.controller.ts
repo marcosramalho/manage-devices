@@ -1,5 +1,5 @@
-import { HttpResponse } from '@presentation/protocols/http'
-import { GetIdDeviceUseCase } from '@application/devices/getByIdDevice.usecase'
+import { HttpResponse } from '../../../presentation/protocols/http'
+import { GetIdDeviceUseCase } from '../../../application/devices/getByIdDevice.usecase'
 
 export class GetByIdDeviceController {
   constructor(private readonly getIdDeviceUseCase: GetIdDeviceUseCase) {}

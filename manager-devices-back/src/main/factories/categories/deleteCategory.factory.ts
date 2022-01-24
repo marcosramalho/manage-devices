@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
 
-import { DeleteCategoryUseCase } from '@application/categories/deleteCategory.usecase'
-import CategoriesRepository from '@infrastructure/repositories/Categories.repository'
-import { DeleteCategoryController } from '@presentation/controllers/categories/deleteCategory.controller'
+import { DeleteCategoryUseCase } from '../../../application/categories/deleteCategory.usecase'
+import CategoriesRepository from '../../../infrastructure/repositories/Categories.repository'
+import { DeleteCategoryController } from '../../../presentation/controllers/categories/deleteCategory.controller'
 
 export const makeDeleteCategoryController = async (
   req: Request,

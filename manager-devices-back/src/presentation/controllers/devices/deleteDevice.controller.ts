@@ -1,5 +1,5 @@
-import { HttpResponse } from '@presentation/protocols/http'
-import { DeleteDeviceUseCase } from '@application/devices/deleteDevice.usecase'
+import { HttpResponse } from '../../../presentation/protocols/http'
+import { DeleteDeviceUseCase } from '../../../application/devices/deleteDevice.usecase'
 
 export class DeleteDeviceController {
   constructor(private readonly deleteDeviceUseCase: DeleteDeviceUseCase) {}

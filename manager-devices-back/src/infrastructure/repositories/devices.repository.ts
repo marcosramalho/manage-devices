@@ -1,8 +1,8 @@
 import { getRepository, Repository } from 'typeorm'
 
-import ICreateDeviceDTO from '@domain/dtos/devices/ICreateDevice.dto'
-import IUpdateDeviceDto from '@domain/dtos/devices/IUpdateCategory.dto'
-import { Device } from '@domain/entities/Device.entity'
+import ICreateDeviceDTO from '../../domain/dtos/devices/ICreateDevice.dto'
+import IUpdateDeviceDto from '../../domain/dtos/devices/IUpdateCategory.dto'
+import { Device } from '../../domain/entities/device.entity'
 
 class DevicesRepository {
   private ormRepository: Repository<Device>

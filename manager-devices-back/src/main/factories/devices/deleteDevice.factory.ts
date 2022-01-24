@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
 
-import { DeleteDeviceUseCase } from '@application/devices/deleteDevice.usecase'
-import DevicesRepository from '@infrastructure/repositories/devices.repository'
-import { DeleteDeviceController } from '@presentation/controllers/devices/deleteDevice.controller'
+import { DeleteDeviceUseCase } from '../../../application/devices/deleteDevice.usecase'
+import DevicesRepository from '../../../infrastructure/repositories/devices.repository'
+import { DeleteDeviceController } from '../../../presentation/controllers/devices/deleteDevice.controller'
 
 export const makeDeleteDeviceController = async (
   req: Request,

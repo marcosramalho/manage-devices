@@ -1,11 +1,10 @@
 {
-  "compilerOptions": {
-    "experimentalDecorators": true,   
-    "outDir": "./dist",
-    "rootDir": "src",
-    "baseUrl": "src",
-    "target": "es2019",
+  "compilerOptions": {    
+    "target": "ES2019",
     "module": "commonjs",
+    "experimentalDecorators": true,   
+    "outDir": "./dist",        
+    "baseUrl": ".",       
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
@@ -13,13 +12,16 @@
     "skipLibCheck": true,
     "noImplicitAny": false,
     "emitDecoratorMetadata": true,
+    "sourceMap": true,
     "paths": {
-      "@application/*": ["application/*"],
-      "@domain/*": ["domain/*"],
-      "@infrastructure/*": ["infrastructure/*"],
-      "@main/*": ["main/*"],
-      "@presentation/*": ["presentation/*"],
-      "@utils/*": ["utils/*"],
-    },
-  }
+      "@/*": ["*"]      
+    }
+  },   
+  "include": ["src"],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "coverage",
+    ".vscode"
+  ]
 }

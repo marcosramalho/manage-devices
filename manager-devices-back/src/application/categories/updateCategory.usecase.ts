@@ -1,5 +1,5 @@
-import IUpdateCategoryDto from '@domain/dtos/categories/IUpdateCategory.dto'
-import CategoriesRepository from '@infrastructure/repositories/Categories.repository'
+import IUpdateCategoryDto from '../../domain/dtos/categories/IUpdateCategory.dto'
+import CategoriesRepository from '../../infrastructure/repositories/Categories.repository'
 
 export class UpdateCategoryUseCase {
   constructor(private readonly categoriesRepository: CategoriesRepository) {}

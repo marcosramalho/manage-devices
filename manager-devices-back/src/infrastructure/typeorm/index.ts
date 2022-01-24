@@ -1,3 +1,4 @@
 import { createConnection } from 'typeorm'
+import ormConfig from './ormconfig'
 
-createConnection()
+createConnection(ormConfig)

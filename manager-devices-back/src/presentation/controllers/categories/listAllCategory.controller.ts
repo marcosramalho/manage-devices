@@ -1,6 +1,6 @@
-import { ListAllCategoryUseCase } from '@application/categories/listAllCategory.usecase'
-import { HttpResponse } from '@presentation/protocols/http'
-import { BaseController } from '@presentation/protocols/controller'
+import { ListAllCategoryUseCase } from '../../../application/categories/listAllCategory.usecase'
+import { HttpResponse } from '../../../presentation/protocols/http'
+import { BaseController } from '../../../presentation/protocols/controller'
 
 export class ListAllCategoryController implements BaseController {
   constructor(

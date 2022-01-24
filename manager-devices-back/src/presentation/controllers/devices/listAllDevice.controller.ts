@@ -1,6 +1,6 @@
-import { HttpResponse } from '@presentation/protocols/http'
-import { BaseController } from '@presentation/protocols/controller'
-import { ListAllDeviceUseCase } from '@application/devices/listAllDevice.usecase'
+import { HttpResponse } from '../../../presentation/protocols/http'
+import { BaseController } from '../../../presentation/protocols/controller'
+import { ListAllDeviceUseCase } from '../../../application/devices/listAllDevice.usecase'
 
 export class ListAllDeviceController implements BaseController {
   constructor(private readonly listAllDeviceUseCase: ListAllDeviceUseCase) {}
