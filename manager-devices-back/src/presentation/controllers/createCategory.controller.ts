@@ -21,7 +21,7 @@ export class CreateCategoryController implements BaseController {
         httpRequest.body
       )
 
-      return { statusCode: 200, body: category }
+      return { statusCode: 201, body: category }
     } catch (error) {
       return {
         statusCode: 500,

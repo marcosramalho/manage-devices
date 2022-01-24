@@ -16,6 +16,10 @@ class CategoriesRepository {
 
     return user
   }
+
+  public async findAll(): Promise<Category[]> {
+    return this.ormRepository.find()
+  }
 }
 
 export default CategoriesRepository
