@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm'
 import { Category } from './category.entity'
 
-@Entity()
+@Entity({ name: 'devices' })
 export class Device {
   @PrimaryGeneratedColumn()
   id!: number
@@ -10,10 +10,10 @@ export class Device {
   color!: string
 
   @Column()
-  partNumber!: string
+  partNumber!: number
 
   @Column()
-  categoryId!: string
+  categoryId!: number
 
   @ManyToOne(() => Category, category => category.devices)
   category!: Category
