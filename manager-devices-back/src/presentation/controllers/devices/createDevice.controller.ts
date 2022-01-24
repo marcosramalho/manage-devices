@@ -17,9 +17,9 @@ export class CreateDeviceController implements BaseController {
         }
       }
 
-      const category = await this.createDeviceUseCase.execute(httpRequest.body)
+      const device = await this.createDeviceUseCase.execute(httpRequest.body)
 
-      return { statusCode: 201, body: category }
+      return { statusCode: 201, body: device }
     } catch (error) {
       return {
         statusCode: 500,
