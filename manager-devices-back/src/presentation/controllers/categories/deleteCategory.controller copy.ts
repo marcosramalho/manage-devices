@@ -1,6 +1,5 @@
-import { HttpResponse } from '../protocols/http'
-import IUpdateCategoryDto from '../../domain/dtos/categories/IUpdateCategory.dto'
-import { DeleteCategoryUseCase } from '../../application/categories/deleteCategory.usecase'
+import { HttpResponse } from '../../protocols/http'
+import { DeleteCategoryUseCase } from '../../../application/categories/deleteCategory.usecase'
 
 export class DeleteCategoryController {
   constructor(private readonly deleteCategoryUseCase: DeleteCategoryUseCase) {}

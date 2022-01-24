@@ -1,6 +1,6 @@
-import { HttpResponse } from '../protocols/http'
-import { UpdateCategoryUseCase } from '../../application/categories/updateCategory.usecase'
-import IUpdateCategoryDto from '../../domain/dtos/categories/IUpdateCategory.dto'
+import { HttpResponse } from '../../protocols/http'
+import { UpdateCategoryUseCase } from '../../../application/categories/updateCategory.usecase'
+import IUpdateCategoryDto from '../../../domain/dtos/categories/IUpdateCategory.dto'
 
 export class UpdateCategoryController {
   constructor(private readonly updateCategoryUseCase: UpdateCategoryUseCase) {}

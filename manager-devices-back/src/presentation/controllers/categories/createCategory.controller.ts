@@ -1,8 +1,8 @@
-import { HttpRequest, HttpResponse } from '../protocols/http'
-import { MissingParamError } from '../errors/missing-param-error'
-import { badRequest } from '../helpers/http'
-import { BaseController } from '../protocols/controller'
-import { CreateCategoryUseCase } from '../../application/categories/createCategory.usecase'
+import { HttpRequest, HttpResponse } from '../../protocols/http'
+import { MissingParamError } from '../../errors/missing-param-error'
+import { badRequest } from '../../helpers/http'
+import { BaseController } from '../../protocols/controller'
+import { CreateCategoryUseCase } from '../../../application/categories/createCategory.usecase'
 
 export class CreateCategoryController implements BaseController {
   constructor(private readonly createCategoryUseCase: CreateCategoryUseCase) {}
