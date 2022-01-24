@@ -10,6 +10,7 @@
     "allowJs": true,
     "strict": true,
     "skipLibCheck": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "emitDecoratorMetadata": true
   }
 }

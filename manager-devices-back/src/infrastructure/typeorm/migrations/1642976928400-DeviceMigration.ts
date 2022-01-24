@@ -15,6 +15,8 @@ export class DeviceMigration1642976928400 implements MigrationInterface {
             name: 'id',
             type: 'int',
             isPrimary: true,
+            isGenerated: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'color',

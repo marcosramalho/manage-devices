@@ -1,9 +1,9 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm'
 import { Device } from './Device.entity'
 
-@Entity()
+@Entity({ name: 'categories' })
 export class Category {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id!: number
 
   @Column()
