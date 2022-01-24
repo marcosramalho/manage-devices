@@ -20,6 +20,10 @@ class CategoriesRepository {
   public async findAll(): Promise<Category[]> {
     return this.ormRepository.find()
   }
+
+  public async findById(id: number): Promise<Category | undefined> {
+    return this.ormRepository.findOne(id)
+  }
 }
 
 export default CategoriesRepository
