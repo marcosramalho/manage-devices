@@ -20,11 +20,11 @@ class DevicesRepository {
   }
 
   public async findAll(): Promise<Device[]> {
-    return this.ormRepository.find()
+    return this.ormRepository.find({ relations: ['category'] })
   }
 
   public async findById(id: number): Promise<Device | undefined> {
-    return this.ormRepository.findOne(id)
+    return this.ormRepository.findOne(id, { relations: ['category'] })
   }
 
   public async update(id: number, data: IUpdateDeviceDto) {
