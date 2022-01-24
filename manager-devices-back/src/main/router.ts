@@ -8,6 +8,7 @@ import { makeUpdateCategoryController } from './factories/categories/updateCateg
 import { makeCreateDeviceController } from './factories/devices/createDevice.factory'
 import { makeGetByIdDeviceController } from './factories/devices/getByIdDevice.factory'
 import { makeListAllDeviceController } from './factories/devices/listAllDevice.factory'
+import { makeUpdateDeviceController } from './factories/devices/updateDevice.factory'
 
 const routes = Router()
 
@@ -20,5 +21,6 @@ routes.delete('/categories/:id', makeDeleteCategoryController)
 routes.post('/devices', makeCreateDeviceController)
 routes.get('/devices', makeListAllDeviceController)
 routes.get('/devices/:id', makeGetByIdDeviceController)
+routes.put('/devices/:id', makeUpdateDeviceController)
 
 export default routes
