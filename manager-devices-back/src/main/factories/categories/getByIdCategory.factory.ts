@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
-import { GetIdCategoryUseCase } from '../../application/categories/getByIdCategory.usecase'
+import { GetIdCategoryUseCase } from '../../../application/categories/getByIdCategory.usecase'
 
-import CategoriesRepository from '../../infrastructure/repositories/Categories.repository'
-import { GetByIdCategoryController } from '../../presentation/controllers/categories/getByIdCategory.controller'
+import CategoriesRepository from '../../../infrastructure/repositories/Categories.repository'
+import { GetByIdCategoryController } from '../../../presentation/controllers/categories/getByIdCategory.controller'
 
 export const makeGetByIdCategoryController = async (
   req: Request,

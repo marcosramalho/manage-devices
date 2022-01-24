@@ -1,10 +1,10 @@
 import { Router } from 'express'
 
-import { makeCreateCategoryController } from './factories/createCategory.factory'
-import { makeDeleteCategoryController } from './factories/deleteCategory.factory'
-import { makeGetByIdCategoryController } from './factories/getByIdCategory.factory'
-import { makeListAllCategoryController } from './factories/listAllCategory.factory'
-import { makeUpdateCategoryController } from './factories/updateCategory.factory'
+import { makeCreateCategoryController } from './factories/categories/createCategory.factory'
+import { makeDeleteCategoryController } from './factories/categories/deleteCategory.factory'
+import { makeGetByIdCategoryController } from './factories/categories/getByIdCategory.factory'
+import { makeListAllCategoryController } from './factories/categories/listAllCategory.factory'
+import { makeUpdateCategoryController } from './factories/categories/updateCategory.factory'
 
 const routes = Router()
 

@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
 
-import { ListAllCategoryUseCase } from '../../application/categories/listAllCategory.usecase'
-import CategoriesRepository from '../../infrastructure/repositories/Categories.repository'
-import { ListAllCategoryController } from '../../presentation/controllers/categories/listAllCategory.controller'
+import { ListAllCategoryUseCase } from '../../../application/categories/listAllCategory.usecase'
+import CategoriesRepository from '../../../infrastructure/repositories/Categories.repository'
+import { ListAllCategoryController } from '../../../presentation/controllers/categories/listAllCategory.controller'
 
 export const makeListAllCategoryController = async (
   req: Request,
