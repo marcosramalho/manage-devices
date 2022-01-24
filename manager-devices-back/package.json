@@ -42,6 +42,7 @@
     "test": "jest --passWithNoTests",
     "test:staged": "jest --passWithNoTests",
     "typeorm": "tsnd -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config ./src/infrastructure/typeorm/ormconfig.ts",
-    "build": "rimraf dist && tsc -p ."
+    "build": "rimraf dist && tsc -p .",
+    "compose:up": "docker-compose -f docker-compose.dev.yml up -d"
   }
 }
