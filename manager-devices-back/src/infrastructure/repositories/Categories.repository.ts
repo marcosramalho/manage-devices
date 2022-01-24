@@ -29,6 +29,10 @@ class CategoriesRepository {
   public async update(id: number, categoryData: IUpdateCategoryDto) {
     return this.ormRepository.update(id, categoryData)
   }
+
+  public async delete(id: number) {
+    return this.ormRepository.delete(id)
+  }
 }
 
 export default CategoriesRepository
