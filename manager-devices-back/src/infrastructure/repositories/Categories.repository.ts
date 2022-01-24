@@ -1,7 +1,7 @@
 import { getRepository, Repository } from 'typeorm'
-import { Category } from '../../domain/entities/category.entity'
-import ICreateCategoryDTO from '../../domain/dtos/categories/ICreateCategory.dto'
-import IUpdateCategoryDto from '../../domain/dtos/categories/IUpdateCategory.dto'
+import { Category } from '@domain/entities/category.entity'
+import ICreateCategoryDTO from '@domain/dtos/categories/ICreateCategory.dto'
+import IUpdateCategoryDto from '@domain/dtos/categories/IUpdateCategory.dto'
 
 class CategoriesRepository {
   private ormRepository: Repository<Category>

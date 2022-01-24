@@ -1,6 +1,6 @@
-import { HttpResponse } from '../../protocols/http'
-import { UpdateDeviceUseCase } from '../../../application/devices/updateDevice.usecase'
-import IUpdateDeviceDto from '../../../domain/dtos/devices/IUpdateCategory.dto'
+import { HttpResponse } from '@presentation/protocols/http'
+import { UpdateDeviceUseCase } from '@application/devices/updateDevice.usecase'
+import IUpdateDeviceDto from '@domain/dtos/devices/IUpdateCategory.dto'
 
 export class UpdateDeviceController {
   constructor(private readonly updateDeviceUseCase: UpdateDeviceUseCase) {}

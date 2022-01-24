@@ -3,6 +3,7 @@
     "experimentalDecorators": true,   
     "outDir": "./dist",
     "rootDir": "src",
+    "baseUrl": "src",
     "target": "es2019",
     "module": "commonjs",
     "esModuleInterop": true,
@@ -11,6 +12,14 @@
     "strict": true,
     "skipLibCheck": true,
     "noImplicitAny": false,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@application/*": ["application/*"],
+      "@domain/*": ["domain/*"],
+      "@infrastructure/*": ["infrastructure/*"],
+      "@main/*": ["main/*"],
+      "@presentation/*": ["presentation/*"],
+      "@utils/*": ["utils/*"],
+    },
   }
 }

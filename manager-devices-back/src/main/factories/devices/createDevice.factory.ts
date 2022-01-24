@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
 
-import { CreateDeviceUseCase } from '../../../application/devices/createDevice.usecase'
-import DevicesRepository from '../../../infrastructure/repositories/devices.repository'
-import { CreateDeviceController } from '../../../presentation/controllers/devices/createDevice.controller'
+import { CreateDeviceUseCase } from '@application/devices/createDevice.usecase'
+import DevicesRepository from '@infrastructure/repositories/devices.repository'
+import { CreateDeviceController } from '@presentation/controllers/devices/createDevice.controller'
 
 export const makeCreateDeviceController = async (
   req: Request,

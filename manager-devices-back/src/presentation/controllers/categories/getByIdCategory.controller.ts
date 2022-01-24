@@ -1,5 +1,5 @@
-import { HttpResponse } from '../../protocols/http'
-import { GetIdCategoryUseCase } from '../../../application/categories/getByIdCategory.usecase'
+import { HttpResponse } from '@presentation/protocols/http'
+import { GetIdCategoryUseCase } from '@application/categories/getByIdCategory.usecase'
 
 export class GetByIdCategoryController {
   constructor(private readonly getIdCategoryUseCase: GetIdCategoryUseCase) {}

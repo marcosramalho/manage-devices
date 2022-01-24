@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
 
-import { GetIdDeviceUseCase } from '../../../application/devices/getByIdDevice.usecase'
-import DevicesRepository from '../../../infrastructure/repositories/devices.repository'
-import { GetByIdDeviceController } from '../../../presentation/controllers/devices/getByIdDevice.controller'
+import { GetIdDeviceUseCase } from '@application/devices/getByIdDevice.usecase'
+import DevicesRepository from '@infrastructure/repositories/devices.repository'
+import { GetByIdDeviceController } from '@presentation/controllers/devices/getByIdDevice.controller'
 
 export const makeGetByIdDeviceController = async (
   req: Request,

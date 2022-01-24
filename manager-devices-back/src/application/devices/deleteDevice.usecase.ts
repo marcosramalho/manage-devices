@@ -1,4 +1,4 @@
-import DevicesRepository from '../../infrastructure/repositories/devices.repository'
+import DevicesRepository from '@infrastructure/repositories/devices.repository'
 
 export class DeleteDeviceUseCase {
   constructor(private readonly devicesRepository: DevicesRepository) {}

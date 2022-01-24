@@ -1,4 +1,4 @@
-import CategoriesRepository from '../../infrastructure/repositories/Categories.repository'
+import CategoriesRepository from '@infrastructure/repositories/Categories.repository'
 
 export class DeleteCategoryUseCase {
   constructor(private readonly categoriesRepository: CategoriesRepository) {}

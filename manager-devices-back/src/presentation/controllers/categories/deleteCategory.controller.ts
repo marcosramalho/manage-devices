@@ -1,5 +1,5 @@
-import { HttpResponse } from '../../protocols/http'
-import { DeleteCategoryUseCase } from '../../../application/categories/deleteCategory.usecase'
+import { DeleteCategoryUseCase } from '@application/categories/deleteCategory.usecase'
+import { HttpResponse } from '@presentation/protocols/http'
 
 export class DeleteCategoryController {
   constructor(private readonly deleteCategoryUseCase: DeleteCategoryUseCase) {}
