@@ -133,7 +133,9 @@ export class DeviceFormComponent implements OnInit, AfterContentChecked {
     // reload component
     this.router
       .navigateByUrl('/dashboard/devices', { skipLocationChange: true })
-      .then(() => this.router.navigate(['/dashboard/devices', 1, 'edit']));
+      .then(() =>
+        this.router.navigate(['/dashboard/devices', device.id, 'edit'])
+      );
   }
 
   private actionsError(error: any) {

@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Device } from './device.model';
-
 import { HttpClient } from '@angular/common/http';
+
 import { map, catchError, Observable, throwError } from 'rxjs';
 
+import { Device } from './device.model';
+
+import { environment } from '../../../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
 export class DeviceService {
-  private apiPath = 'api/devices';
+  private apiPath = environment.baseUrl + 'devices';
 
   constructor(private http: HttpClient) {}
 
@@ -27,8 +29,13 @@ export class DeviceService {
   }
 
   public save(device: Device): Observable<Device> {
+    console.log(device);
     return this.http
-      .post(this.apiPath, device)
+      .post(this.apiPath, {
+        color: device.color,
+        partNumber: device.partNumber,
+        categoryId: device.categoryId,
+      })
       .pipe(map(this.jsonDataToDevice), catchError(this.handleError));
   }
 

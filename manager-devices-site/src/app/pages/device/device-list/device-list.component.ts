@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Device } from '../shared/device.model';
 import { DeviceService } from '../shared/device.service';
 @Component({
@@ -9,7 +10,10 @@ import { DeviceService } from '../shared/device.service';
 export class DeviceListComponent implements OnInit {
   public devices: Device[] = [];
 
-  constructor(private deviceService: DeviceService) {}
+  constructor(
+    private deviceService: DeviceService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.loadAll();
@@ -22,11 +26,14 @@ export class DeviceListComponent implements OnInit {
 
     if (mustDelete) {
       this.deviceService.delete(categoryId).subscribe(
-        () =>
-          (this.devices = this.devices.filter(
+        () => {
+          this.toastr.success('Device deleted successfully!');
+          this.devices = this.devices.filter(
             (element) => element.id !== categoryId
-          )),
-        () => console.error(`Error to delete`)
+          );
+        },
+
+        () => this.toastr.error('Error to delete')
       );
     }
   }
@@ -34,7 +41,7 @@ export class DeviceListComponent implements OnInit {
   private loadAll() {
     this.deviceService.getAll().subscribe(
       (devices) => (this.devices = devices),
-      (error) => console.error(`Error to load data`)
+      (error) => this.toastr.error('Error to load data')
     );
   }
 }

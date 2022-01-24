@@ -27,7 +27,7 @@
   <tbody>
     <tr *ngFor="let device of devices" class="align-middle">
       <td>{{ device.id }} </td>
-      <td>{{ device.categoryId }}</td>
+      <td>{{ device.category?.name }}</td>
       <td>{{ device.partNumber }}</td>
       <td class="text-center">
         <button mat-icon-button [ngStyle]="{'background-color': device.color}" style="width: 25px; height: 25px;">
