@@ -5,11 +5,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { SigninComponent } from './signin/signin.component';
-import { InMemoryDatabase } from './in-memory-database';
 
 @NgModule({
   declarations: [AppComponent, SigninComponent],
@@ -18,7 +16,6 @@ import { InMemoryDatabase } from './in-memory-database';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDatabase),
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',

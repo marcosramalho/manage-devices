@@ -125,7 +125,9 @@ export class CategoriesFormComponent implements OnInit, AfterContentChecked {
     // reload component
     this.router
       .navigateByUrl('/dashboard/categories', { skipLocationChange: true })
-      .then(() => this.router.navigate(['/dashboard/categories', 1, 'edit']));
+      .then(() =>
+        this.router.navigate(['/dashboard/categories', category.id, 'edit'])
+      );
   }
 
   private actionsError(error: any) {

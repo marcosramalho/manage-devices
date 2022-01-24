@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { map, catchError, Observable, throwError } from 'rxjs';
+
 import { Category } from './categories.model';
 
-import { HttpClient } from '@angular/common/http';
-import { map, catchError, Observable, throwError } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoriesService {
-  private apiPath = 'api/categories';
+  private apiPath = environment.baseUrl + 'categories';
 
   constructor(private http: HttpClient) {}
 
@@ -28,7 +31,7 @@ export class CategoriesService {
 
   public save(category: Category): Observable<Category> {
     return this.http
-      .post(this.apiPath, category)
+      .post(this.apiPath, { name: category.name })
       .pipe(map(this.jsonDataToCategory), catchError(this.handleError));
   }
 

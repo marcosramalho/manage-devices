@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 import { Category } from '../shared/categories.model';
 import { CategoriesService } from './../shared/categories.service';
@@ -10,7 +11,10 @@ import { CategoriesService } from './../shared/categories.service';
 export class CategoriesListComponent implements OnInit {
   public categories: Category[] = [];
 
-  constructor(private categoriesService: CategoriesService) {}
+  constructor(
+    private categoriesService: CategoriesService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.loadAll();
@@ -23,11 +27,13 @@ export class CategoriesListComponent implements OnInit {
 
     if (mustDelete) {
       this.categoriesService.delete(categoryId).subscribe(
-        () =>
-          (this.categories = this.categories.filter(
+        () => {
+          this.toastr.success('Deleted succesfully!');
+          this.categories = this.categories.filter(
             (element) => element.id !== categoryId
-          )),
-        () => console.error(`Error to delete`)
+          );
+        },
+        () => this.toastr.error('Error to delete category')
       );
     }
   }
@@ -35,7 +41,7 @@ export class CategoriesListComponent implements OnInit {
   private loadAll() {
     this.categoriesService.getAll().subscribe(
       (categories) => (this.categories = categories),
-      (error) => console.error(`Error to load data`)
+      (error) => this.toastr.error('Error to load category')
     );
   }
 }
