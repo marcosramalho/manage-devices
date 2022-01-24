@@ -23,8 +23,9 @@
             <option [value]="category.id" *ngFor="let category of categories">{{ category.name }}</option>
           </select>
 
-          <div *ngIf="!submittedForm && deviceForm.controls['categoryId'].errors" class="invalid-feedback">
-            <div *ngIf="deviceForm.controls['categoryId'].errors['required']">Category is required.</div>
+          <div class="invalid-feedback">
+            <app-input-field-error [control]="$any(deviceForm).get('categoryId')" label="Name">
+            </app-input-field-error>
           </div>
         </div>
 
@@ -32,9 +33,9 @@
           <label for="color">Color</label>
           <input type="color" class="form-control" id="color" formControlName="color" [ngClass]="applyCss('color')">
 
-          <div *ngIf="!submittedForm && deviceForm.controls['color'].errors" class="invalid-feedback">
-            <div *ngIf="deviceForm.controls['color'].errors['required']">Color is required.</div>
-            <div *ngIf="deviceForm.controls['color'].errors['maxlength']">Color must be longer than 16 characters.</div>
+          <div class="invalid-feedback">
+            <app-input-field-error [control]="$any(deviceForm).get('color')" label="Name">
+            </app-input-field-error>
           </div>
         </div>
 
@@ -42,8 +43,9 @@
           <label for="partNumber">Part number</label>
           <input type="number" class="form-control" id="partNumber" formControlName="partNumber" [ngClass]="applyCss('partNumber')">
 
-          <div *ngIf="!submittedForm && deviceForm.controls['partNumber'].errors" class="invalid-feedback">
-            <div *ngIf="deviceForm.controls['partNumber'].errors['required']">Part number is required.</div>
+          <div class="invalid-feedback">
+            <app-input-field-error [control]="$any(deviceForm).get('partNumber')" label="Name">
+            </app-input-field-error>
           </div>
         </div>
 

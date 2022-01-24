@@ -6,16 +6,8 @@ import { CategoriesFormComponent } from './categories-form/categories-form.compo
 import { CategoriesListComponent } from './categories-list/categories-list.component';
 import { SharedModule } from '../../shared/shared.module';
 
-
 @NgModule({
-  declarations: [
-    CategoriesFormComponent,
-    CategoriesListComponent
-  ],
-  imports: [
-    CommonModule,
-    CategoriesRoutingModule,
-    SharedModule
-  ]
+  declarations: [CategoriesFormComponent, CategoriesListComponent],
+  imports: [CommonModule, CategoriesRoutingModule, SharedModule],
 })
-export class CategoriesModule { }
+export class CategoriesModule {}

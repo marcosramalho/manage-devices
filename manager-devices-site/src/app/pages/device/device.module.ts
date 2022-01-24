@@ -6,16 +6,8 @@ import { DeviceListComponent } from './device-list/device-list.component';
 import { DeviceFormComponent } from './device-form/device-form.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
 @NgModule({
-  declarations: [
-    DeviceListComponent,
-    DeviceFormComponent
-  ],
-  imports: [
-    CommonModule,
-    DeviceRoutingModule,
-    SharedModule
-  ]
+  declarations: [DeviceListComponent, DeviceFormComponent],
+  imports: [CommonModule, DeviceRoutingModule, SharedModule],
 })
-export class DeviceModule { }
+export class DeviceModule {}

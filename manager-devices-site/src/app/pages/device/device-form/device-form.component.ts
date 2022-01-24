@@ -3,6 +3,7 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
+  ValidatorFn,
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,6 +16,7 @@ import { DeviceService } from './../shared/device.service';
 import { Device } from '../shared/device.model';
 import { Category } from '../../categories/shared/categories.model';
 import { CategoriesService } from './../../categories/shared/categories.service';
+import { FormValidations } from 'src/app/shared/utils/form-validation';
 
 @Component({
   selector: 'app-device-form',
@@ -41,7 +43,11 @@ export class DeviceFormComponent implements OnInit, AfterContentChecked {
     this.deviceForm = this.formBuilder.group({
       id: new FormControl(''),
       categoryId: new FormControl('', [Validators.required]),
-      partNumber: new FormControl('', [Validators.required]),
+      partNumber: new FormControl('', [
+        Validators.required,
+        Validators.minLength(0),
+        FormValidations.preventNumberNegative,
+      ]),
       color: new FormControl('', [
         Validators.required,
         Validators.maxLength(16),
